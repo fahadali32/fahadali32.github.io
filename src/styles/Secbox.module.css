@@ -1,0 +1,25 @@
+.secbox{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  gap: max(45px, 10%);
+}
+.image {
+  background-size: 100% 100%;
+  background-position: 0px 0px, 0px 0px;
+  background-image: radial-gradient(
+      17% 25% at 23% 50%,
+      #4e4fabff 0%,
+      #073aff00 100%
+    ),
+     radial-gradient(75% 75% at 50% 50%, #0c0635 0%, #0c0635 100%);
+}
+.skills{
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+}

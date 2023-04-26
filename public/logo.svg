@@ -1,0 +1,16 @@
+<svg
+        width="202"
+        height="189"
+        viewBox="0 0 202 189"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+         
+          d="M11 93.7103L39.0645 10H164.387L191 96.3427L164.387 179H39.0645L11 93.7103Z"
+          stroke="white"
+          stroke-width="20"
+        />
+        <path d="M76 159V49H150" stroke="white" stroke-width="20" />
+        <path d="M75 99H135" stroke="white" stroke-width="20" />
+      </svg>

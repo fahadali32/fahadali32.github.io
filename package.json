@@ -1,6 +1,6 @@
 {
-  "name": "test",
-  "version": "0.1.0",
+  "name": "portfolio",
+  "version": "0.1.1 ",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,10 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "eslint": "8.38.0",
-    "eslint-config-next": "13.3.0",
-    "next": "13.3.0",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
+    "framer-motion": "^10.9.1",
+    "gsap": "^3.11.5",
+    "gsap-trial": "^3.11.5",
+    "hamburger-react": "^2.5.0",
+    "next": "13.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-gsap-enhancer": "^0.3.0",
+    "react-icons": "^4.8.0",
+    "react-parallax-tilt": "^1.7.129",
+    "react-simple-typewriter": "^5.0.1",
+    "split-type": "^0.3.3",
+    "typewriter-effect": "^2.19.0"
   }
 }

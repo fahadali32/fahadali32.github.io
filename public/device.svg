@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="557" height="412" fill="none" viewBox="0 0 557 412">
+  <g class="Group 1">
+    <rect width="557" height="343" fill="#000" class="Rectangle 1" rx="23"/>
+    <path fill="#fff" d="M19 21h518v301H19z" class="Rectangle 2"/>
+    <path fill="#000" d="M209 350h155l24 62H185l24-62Z" class="Rectangle 3"/>
+    <g class="Mask group">
+      <path fill="#FFFDFD" d="M267.879 387h37.63L309 405h-45l3.879-18Z" class="Rectangle 4"/>
+    </g>
+    <path fill="#FFF7F7" d="M201.048 379h170.904l1.048 1H200l1.048-1Z" class="Rectangle 5"/>
+  </g>
+</svg>

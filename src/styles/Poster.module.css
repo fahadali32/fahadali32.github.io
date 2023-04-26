@@ -1,0 +1,146 @@
+.postermain {
+  display: flex;
+  height: 100vh;
+  gap: 17.5%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.postSection {
+  /* margin-top: -33vmin; */
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.model {
+  width: 100%;
+  position: relative;
+  top: -29%;  
+}
+
+.mtitle1 {
+  color: white;
+  font-size: 3.7vmin;
+  position: relative;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.mtitle {
+  color: white;
+  font-size: clamp(2.8rem, calc(3.45rem + 5.77vw), 10.82rem);
+}
+.types {
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: clamp(0.9375rem, 0.6758rem + 0.9852vw, 1.5625rem);
+  position: relative;
+}
+
+.postImage {
+  width: 20%;
+  height: 19vw;
+  border-radius: 53% 47% 70% 30% / 30% 65% 35% 70%;
+  background: linear-gradient(45deg, #ffffff00, #658db3);
+  animation: blob 7s linear infinite;
+  transition: all 2s;
+  position: relative;
+  top: -5%;
+}
+@keyframes blob {
+  0% {
+    border-radius: 53% 47% 70% 30% / 30% 65% 35% 70%;
+  }
+  10% {
+    border-radius: 53% 47% 41% 59% / 30% 43% 57% 70%;
+  }
+  30% {
+    border-radius: 53% 47% 23% 77% / 67% 43% 57% 33%;
+  }
+  50% {
+    border-radius: 53% 47% 28% 72% / 55% 20% 80% 45%;
+  }
+  70% {
+    border-radius: 22% 78% 48% 52% / 55% 49% 51% 45%;
+  }
+  100% {
+    border-radius: 53% 47% 70% 30% / 30% 65% 35% 70%;
+  }
+}
+.apostImage{
+  width: 20%;
+  height: 19vw;
+  border-radius: 53% 47% 70% 30% / 30% 65% 35% 70%;
+  background: linear-gradient(45deg, #ffffff00, #658db3);
+  animation: ani 1s cubic-bezier(0, 1.07, 0.49, 1.33);
+  transition: all 2s;
+  position: relative;
+  top: -5%;
+}
+@keyframes ani {
+  from{
+    transform: scale(0);
+    transform: rotate(180);
+  }to{
+    transform: scale(1);
+  }
+}
+.cBtn{
+  padding: 10px;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  position: relative;
+  top: 35px;
+  font-weight: bold;
+  font-size: clamp(1rem,10vw, 3vmin);
+  width: clamp(min(10vw, 18rem), 300px, 36vw);
+  height: clamp(min(4vw, 10rem), 50px, max(50vw, 55rem));
+}
+.model{
+  position: relative;
+  animation: model 3s infinite linear alternate-reverse;
+}
+@keyframes model
+ {
+   from{
+    top: 0px;
+   } to{
+    top: -50px;
+   }
+}
+.postImageBox{
+  display: flex;
+}
+@media only screen and (max-width: 880px) {
+  .postImage{
+    width: 35vw;
+    height: 31vw;
+    border-radius: 53% 47% 70% 30% / 30% 65% 35% 70%;
+    background: linear-gradient(45deg, #ffffff00, #658db3);
+    animation: blob 7s linear infinite;
+    transition: all 2s;
+    position: relative;
+    /* top: -10%; */
+    top: 13%;
+  }
+  
+}
+@media only screen and (max-width: 600px) {
+  .postermain{
+    display: flex;
+    height: 80vh;
+    gap: 17.5%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin-top: clamp();
+  }
+}
