@@ -39,38 +39,38 @@ export default function Home() {
       }, 1200);
     });
     // Select all elements with class .panel
-    const panels = gsap.utils.toArray(".panel");
+    // const panels = gsap.utils.toArray(".panel");
 
-    // Normalize scroll for touch devices
-    const observer = ScrollTrigger.normalizeScroll(true);
+    // // Normalize scroll for touch devices
+    // const observer = ScrollTrigger.normalizeScroll(true);
 
-    // Tween for scrolling between sections
-    let scrollTween;
+    // // Tween for scrolling between sections
+    // let scrollTween;
 
-    function goToSection(i) {
-      scrollTween = gsap.to(window, {
-        scrollTo: { y: i * innerHeight, autoKill: false },
-        duration: 1,
-        onComplete: () => (scrollTween = null),
-        overwrite: true,
-      });
-    }
+    // function goToSection(i) {
+    //   scrollTween = gsap.to(window, {
+    //     scrollTo: { y: i * innerHeight, autoKill: false },
+    //     duration: 1,
+    //     onComplete: () => (scrollTween = null),
+    //     overwrite: true,
+    //   });
+    // }
 
-    // Create ScrollTrigger for each panel
-    gsap.utils.toArray(".panel").forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "top bottom-=2",
-        end: () => "+=" + (window.innerHeight * 2 - 4),
-        onToggle: (self) => self.isActive && !scrollTween && goToSection(i),
-      });
-    });
+    // // Create ScrollTrigger for each panel
+    // gsap.utils.toArray(".panel").forEach((panel, i) => {
+    //   ScrollTrigger.create({
+    //     trigger: panel,
+        // start: "top bottom-=2",
+        // end: () => "+=" + (window.innerHeight * 2 - 4),
+    //     onToggle: (self) => self.isActive && !scrollTween && goToSection(i),
+    //   });
+    // });
 
-    window.addEventListener("wheel", cancelWhenTweening, { passive: false });
-    window.addEventListener("scroll", cancelWhenTweening, { passive: false });
-    function cancelWhenTweening(e) {
-      scrollTween && e.preventDefault();
-    }
+    // window.addEventListener("wheel", cancelWhenTweening, { passive: false });
+    // window.addEventListener("scroll", cancelWhenTweening, { passive: false });
+    // function cancelWhenTweening(e) {
+    //   scrollTween && e.preventDefault();
+    // }
     // Show loading screen for 7 seconds
     const timer = setTimeout(() => {
       setIsLoading(false);
