@@ -78,12 +78,75 @@ function Nav() {
       clearTimeout(timer);
     };
   }, []);
-  function menubar() {
-    
-  }
+  function menubar() {}
   return (
     <div>
-      <div className={styles.nav}>
+      <div className={`navbar ${styles.navbar}`}>
+        <div className={`navHeader ${styles.navHeader}`}>
+          <div className={styles.brandName}>
+            <Image
+              src={"/logo.svg"}
+              width={100}
+              height={100}
+              className={styles.mLogo}
+              alt={"Logo"}
+            />
+          </div>
+          <div className={styles.toggleBtn}>
+            <Hamburger
+              onToggle={(toggled) => {
+                if (toggled) {
+                  const navlink = (document.querySelector(
+                    ".navlink"
+                  ).style.clipPath = "circle(141.4% at 100% 0)");
+                  document.querySelector(".navbar").style.zIndex = 999
+                  document.querySelector(".bd").style.overflowY = "hidden"
+                  // document.querySelector(".navlink").style.display = "block";
+                } else {
+                  const navlink = (document.querySelector(
+                    ".navlink"
+                  ).style.clipPath = "circle(0.4% at 100% 0)");
+                  document.querySelector(".navbar").style.background = "transparent";
+                  document.querySelector(".navbar").style.zIndex = 0
+                  
+                }
+              }}
+            />
+          </div>
+        </div>
+        <div className={`navlink ${styles.navLink}`}>
+          <ul>
+            <li>
+              <Link
+                href={"/about"}
+                style={{ display: isVisible ? "block" : "none" }}
+                ref={myElement1}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"/about"}
+                style={{ display: isVisible ? "block" : "none" }}
+                ref={myElement1}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"/about"}
+                style={{ display: isVisible ? "block" : "none" }}
+                ref={myElement1}
+              >
+                Project
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      {/* <div className={styles.nav}>
         <Image
           src={"/logo.svg"}
           width={100}
@@ -115,8 +178,8 @@ function Nav() {
             About
           </Link>
         </div>
-      </div>
-      <div className={styles.mnav}>
+      </div> */}
+      {/* <div className={styles.mnav}>
         <Image
           src={"/logo.svg"}
           width={100}
@@ -133,10 +196,13 @@ function Nav() {
           <Hamburger
             onToggle={(toggled) => {
               if (toggled) {
-                const navlink = document.querySelector(".navlink").style.clipPath = "circle(141.4% at 100% 0)"
-                
+                const navlink = (document.querySelector(
+                  ".navlink"
+                ).style.clipPath = "circle(141.4% at 100% 0)");
               } else {
-                const navlink = document.querySelector(".navlink").style.clipPath = "circle(0.4% at 100% 0)";
+                const navlink = (document.querySelector(
+                  ".navlink"
+                ).style.clipPath = "circle(0.4% at 100% 0)");
               }
             }}
           />
@@ -164,7 +230,7 @@ function Nav() {
             About
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

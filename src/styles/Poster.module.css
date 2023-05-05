@@ -7,6 +7,8 @@
   align-content: center;
   align-items: center;
   flex-direction: row;
+  /* position: fixed; */
+  width: 100%;
 }
 .postSection {
   /* margin-top: -33vmin; */
@@ -19,7 +21,7 @@
 .model {
   width: 100%;
   position: relative;
-  top: -29%;  
+  /* top: -29%;   */
 }
 
 .mtitle1 {
@@ -43,13 +45,13 @@
 
 .postImage {
   width: 20%;
-  height: 19vw;
+  height: 21vw;
   border-radius: 53% 47% 70% 30% / 30% 65% 35% 70%;
   background: linear-gradient(45deg, #ffffff00, #658db3);
   animation: blob 7s linear infinite;
   transition: all 2s;
   position: relative;
-  top: -5%;
+  top: -12%;
 }
 @keyframes blob {
   0% {
@@ -71,7 +73,7 @@
     border-radius: 53% 47% 70% 30% / 30% 65% 35% 70%;
   }
 }
-.apostImage{
+.apostImage {
   width: 20%;
   height: 19vw;
   border-radius: 53% 47% 70% 30% / 30% 65% 35% 70%;
@@ -82,14 +84,15 @@
   top: -5%;
 }
 @keyframes ani {
-  from{
+  from {
     transform: scale(0);
     transform: rotate(180);
-  }to{
+  }
+  to {
     transform: scale(1);
   }
 }
-.cBtn{
+.cBtn {
   padding: 10px;
   color: white;
   background: transparent;
@@ -98,49 +101,50 @@
   position: relative;
   top: 35px;
   font-weight: bold;
-  font-size: clamp(1rem,10vw, 3vmin);
+  font-size: clamp(1rem, 10vw, 3vmin);
   width: clamp(min(10vw, 18rem), 300px, 36vw);
   height: clamp(min(4vw, 10rem), 50px, max(50vw, 55rem));
 }
-.model{
+.model {
   position: relative;
   animation: model 3s infinite linear alternate-reverse;
 }
-@keyframes model
- {
-   from{
+@keyframes model {
+  from {
     top: 0px;
-   } to{
+  }
+  to {
     top: -50px;
-   }
+  }
 }
-.postImageBox{
+.postImageBox {
   display: flex;
 }
 @media only screen and (max-width: 880px) {
-  .postImage{
-    width: 35vw;
-    height: 31vw;
+  .postImage {
+    width: 39vw;
+    height: 35vw;
     border-radius: 53% 47% 70% 30% / 30% 65% 35% 70%;
     background: linear-gradient(45deg, #ffffff00, #658db3);
     animation: blob 7s linear infinite;
     transition: all 2s;
     position: relative;
     /* top: -10%; */
-    top: 13%;
+    /* top: 13%; */
   }
-  
 }
 @media only screen and (max-width: 600px) {
-  .postermain{
+  .postermain {
     display: flex;
     height: 80vh;
-    gap: 17.5%;
+    gap: 21.5%;
     flex-wrap: wrap;
+    width: 100%;
     justify-content: center;
-    align-content: center;
     align-items: center;
-    flex-direction: column-reverse;
-    margin-top: clamp();
+    flex-direction: column;
+    position: absolute;
+    top: 10vw;
+    align-content: center;
   }
 }

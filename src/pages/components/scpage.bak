@@ -1,0 +1,284 @@
+function Scpage() {
+  const ref = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
+  const [size, setSize] = useState();
+  useEffect(() => {
+    window.addEventListener("resize", (e) => {
+      e.preventDefault();
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 1200);
+    });
+
+    let width = window.innerWidth;
+    function resize() {
+      width = window.innerWidth;
+      window.window.innerWidth >= 600 ? setSize(10) : setSize(30);
+      console.log(window.innerWidth);
+    }
+    // console.log(size);
+    ScrollTrigger.addEventListener("refreshInit", resize);
+    resize();
+
+    const element = ref.current;
+    gsap.set(".imageBx", { scaleX: 0 });
+    gsap.set(".laptopInside", { opacity: 0 });
+    gsap.set(".Device", { opacity: 1 });
+    gsap.set(".skills", { opacity: 0, x: 100, y: 50 });
+    gsap.set(".what", { opacity: 0, x: 100, y: 50 });
+    window.innerWidth >= 600 ? setSize(10) : setSize(30);
+    console.log(size);
+    const tl = gsap
+      .timeline({
+        defaults: { duration: 0.1 },
+      })
+      .to(".imageBx", { scaleX: 1 })
+      .to(
+        ".Device",
+        { opacity: 1, rotationY: 0, transformOrigin: "center" },
+        "+=0.1"
+      )
+      .to(".fullMonitor", { scale: 0.9, transformOrigin: "center" }, "+=0.1")
+      .to(".inputs", { opacity: 0, yPercent: -1 })
+      .to(
+        ".laptopBd",
+        {
+          scaleX: 3.17,
+          xPercent: 1,
+          yPercent: -30,
+          transformOrigin: "center",
+        },
+        "+=0.5"
+      )
+
+      .to(
+        ".laptopBorder",
+        {
+          scaleY: 4.3,
+          xPercent: 0,
+          yPercent: 300,
+          transformOrigin: "bottom",
+        },
+        "+=0.5"
+      )
+      .to(".laptopBd", { scaleY: 0, transformOrigin: "top" })
+      .to(".fullMonitor", { scaleX: 0.25, transformOrigin: "center" }, "+=0.5")
+      .to(".div1", {
+        scaleX: 1,
+        scaleY: 1,
+        xPercent: 0,
+        yPercent: 0,
+        transformOrigin: "center",
+      })
+      .to(".div2", { scaleX: 1, scaleY: 1, xPercent: 0, yPercent: 0 })
+      .to(".inputs", { opacity: 1, yPercent: -3700, xPercent: -7 })
+      .to(".div1", {
+        scaleX: 1.67,
+        scaleY: -0.6,
+        xPercent: -35,
+        yPercent: -27,
+        transformOrigin: "center",
+      })
+      .to(".div2", {
+        scaleX: 3,
+        scaleY: -0.5,
+        xPercent: 100,
+        yPercent: 35,
+        transformOrigin: "center",
+      })
+      .to(".what", { opacity: 1, x: 0, y: 0, stagger: 0.2 }, "+=0.5")
+      .to(".skills", { opacity: 1, x: 0, y: 0, stagger: 0.2 }, "+=0.5");
+
+    ScrollTrigger.create({
+      trigger: element,
+      start: "50% 70%",
+      end: "bottom 50%+=100vh",
+      ease: "Power.inOut",
+      toggleActions: "play none none reverse",
+      pin: true,
+      pinSpacing: false,
+      scrub: true,
+      markers: true,
+      animation: tl,
+    });
+  }, [size]);
+
+  return (
+    <div ref={ref} className={styles.secbox}>
+      <div className={`imageBx ${styles.image}`}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="416"
+          height="331"
+          fill="none"
+          className={styles.devices}
+          viewBox="0 0 416 331"
+          style={{ overflow: "inherit" }}
+        >
+          <g className="Device">
+            <g className="laptopBd">
+              <path
+                fill="#000"
+                d="M132 326.641h151.612l-3.734 4.019H134.614L132 326.641Z"
+                className="laptopBorder"
+              />
+              <path
+                fill="#000"
+                d="M149.925 276h115.763l17.924 49.837H132L149.925 276Z"
+                className="laptopDown"
+              />
+              <g className="laptopInside">
+                <path
+                  fill="#FFFDFD"
+                  d="M193.899 305.742h28.104l2.607 14.468h-33.608l2.897-14.468Z"
+                  className="trackpad"
+                />
+                <path
+                  fill="#FFF7F7"
+                  d="M143.986 299.311h127.64l.783.804H143.203l.783-.804Z"
+                  className="keypadBorder"
+                />
+              </g>
+            </g>
+            <g className="fullMonitor">
+              <rect
+                width="416"
+                height="275.713"
+                fill="#000"
+                className="monitorBack"
+                rx="23"
+              />
+              <path
+                fill="#fff"
+                d="M14.19 16.88h386.873v241.952H14.19z"
+                className="monitor"
+              />
+              <g className="contents">
+                <path fill="#D9D9D9" d="M34 33h348v34H34z" className="div3" />
+                <path
+                  fill="#D9D9D9"
+                  d="m36 234.816.757-150.234 115.557.582-.757 150.234L36 234.816Z"
+                  className="div2"
+                />
+                <path
+                  fill="#D9D9D9"
+                  d="M173 235.234 173.757 85l207.51 1.045-.757 150.234L173 235.234Z"
+                  className="div1"
+                />
+              </g>
+              <g className="inputs">
+                <path
+                  fill="#353535"
+                  stroke="#9B9B9B"
+                  d="M149.5 265.5h98v3h-98z"
+                  className="speaker"
+                />
+                <path
+                  fill="#353535"
+                  stroke="#9B9B9B"
+                  d="M394.5 267c0 1.835-1.905 3.5-4.5 3.5-2.595 0-4.5-1.665-4.5-3.5s1.905-3.5 4.5-3.5c2.595 0 4.5 1.665 4.5 3.5Z"
+                  className="camera"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+
+        <svg
+          width="762"
+          height="588"
+          viewBox="0 0 762 588"
+          fill="none"
+          className={styles.bigCir}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <ellipse
+            cx="381"
+            cy="318"
+            rx="381"
+            ry="318"
+            fill="url(#paint0_radial_4_13)"
+          />
+          <defs>
+            <radialGradient
+              id="paint0_radial_4_13"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(381 318) rotate(93.1037) scale(295.376 353.921)"
+            >
+              <stop stop-color="#8A77FF" />
+              <stop offset="1" stop-color="#322D51" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+      <h1 className={`what`}>What can I do</h1>
+      <div className={`${styles.skills}`}>
+        <div className={`skills ${styles.skillShow}`}>
+          <h1>Web Services</h1>
+          <br />
+          <p>Create websites and design websites by using Reactjs,html,css</p>
+        </div>
+        <div className={`skills ${styles.skillShow}`}>
+          <h1>Backend Services</h1>
+          <br />
+          <p>
+            Create websites backend by using
+            Express.Js,Next.Js,Django,Sql,MongoDB
+          </p>
+        </div>
+        <div className={`skills ${styles.skillShow}`}>
+          <h1>API services</h1>
+          <br />
+          <p>Create Rest API by using Django,Express.Js</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
+
+another 
+onComplete: () => {
+          tl.to(".fullMonitor", {
+            opacity: 1,
+          });
+          tl.to(
+            ".I",
+            {
+              onComplete: () => {
+                console.log("i am finished");
+
+                // tl.to(".fullMonitor", {
+                  
+                //   scaleX: 1,
+                //   scaleY: 1,
+                // })
+                //   .to(".laptopBd", {
+                    
+                //     duration:1.3,
+                //     opacity: 1,
+                //     transformOrigin: "top",
+                //   })
+                //   .to(
+                //     ".laptopBd",
+                //     {
+                //       scaleX: 3.17,
+                //       xPercent: 1,
+                //       yPercent: -30,
+                //       transformOrigin: "center",
+                //       duration:1
+                //     },
+                    
+                //   );
+              },
+              onReverseComplete: () => {},
+              opacity: 0,
+            },
+            "+=1"
+          );
+        },

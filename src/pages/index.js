@@ -10,6 +10,7 @@ import Logo from "./components/logo";
 import Nav from "./components/nav";
 import Poster from "./components/poster";
 import Scpage from "./components/scPage";
+import About from "./components/About";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -108,7 +109,9 @@ export default function Home() {
             <section className="panel">
               <Scpage />
             </section>
-            <section className="panel">TWO</section>
+            <section className="panel">
+              <About />
+            </section>
             <section className="panel">THREE</section>
             <section className="panel">FOUR</section>
           </div>

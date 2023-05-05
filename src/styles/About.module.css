@@ -1,0 +1,75 @@
+.AboutBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  gap: 50px;
+}
+.Me {
+  width: 100%;
+  background-color: #5f569c;
+  display: block;
+}
+.myImg{
+  position: absolute;
+}
+.About {
+  font-size: clamp(2.1875rem, 1.8rem + 1.8421vw, 3.5rem);
+}
+.description {
+  /* background-color: #06031d; */
+  color: white;
+  font-family: sans-serif;
+  padding: 30px;
+  /* height: 31vh; */
+  width: 47vmin;
+  /* white-space: pre-wrap; */
+}
+.imageBox {
+  height: 341px;
+  overflow: hidden;
+}
+.des {
+  font-size: clamp(1.1875rem, 1.1217rem + 0.3509vw, 1.4375rem);
+}
+.scoial {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  font-size: clamp(2.1875rem, 1.1217rem + 0.3509vw, 1.4375rem);
+  gap: 25px;
+}
+.scoial > a:hover {
+  color: #9599cf;
+}
+@media screen and (max-width: 530px) {
+  .AboutBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+  }
+  .description {
+    /* background-color: #06031d; */
+    color: white;
+    font-family: sans-serif;
+    padding: 30px;
+    /* height: 31vh; */
+    width: auto;
+    /* white-space: pre-wrap; */
+  }
+}

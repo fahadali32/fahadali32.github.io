@@ -6,10 +6,11 @@ const font = Anton({ subsets: ["latin"], weight: ["400"] });
 import SplitType from "split-type";
 import { gsap } from "gsap/dist/gsap.js";
 import Tilt from "react-parallax-tilt";
-import { motion } from "framer-motion";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 function Poster() {
   const root = useRef();
+  const posterMain = useRef();
   const myElement = useRef(null);
   const [isvsisble, setVisisble] = useState(false);
   const [scale, setScale] = useState(1);
@@ -50,8 +51,11 @@ function Poster() {
       clearTimeout(timer);
     };
   }, []);
+
+ 
+
   return (
-    <div className={styles.postermain}>
+    <div ref={posterMain} className={`${styles.postermain}`}>
       <div
         style={isvsisble ? { opacity: 1 } : { opacity: 0 }}
         className={styles.postSection}
@@ -81,14 +85,20 @@ function Poster() {
           />
         </div>
         <div className={styles.conBtn}>
-          <button className={styles.cBtn}>{"Lets's Talk"}</button>
+          <button
+            className={styles.cBtn}
+            onClick={() => {
+              alert("hi");
+            }}
+          >
+            {"Lets's Talk"}
+          </button>
         </div>
       </div>
       <div
         style={isvsisble ? { opacity: 1, effect } : { opacity: 0 }}
         className={`${effect ? styles.postImage : styles.apostImage}`}
       >
-       
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

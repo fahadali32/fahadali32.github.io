@@ -276,7 +276,10 @@
     transform: rotate(0deg);
   }
 } */
-
+/* .posterbox{
+  
+  width: 100%;
+} */
 .loading {
   width: 100vw;
   height: 100vh;
@@ -286,6 +289,7 @@
   flex-wrap: nowrap;
   align-items: flex-start;
 }
+
 /*  
 .main {
   display: none;
