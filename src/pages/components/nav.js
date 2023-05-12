@@ -18,6 +18,8 @@ function Nav() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+  const navh = document.documentElement.clientHeight
+    document.documentElement.style.setProperty("--navh", `${navh}px`);
     const timer = setTimeout(() => {
       const text1 = new SplitType(myElement1.current, {
         types: "words, chars",
@@ -72,6 +74,14 @@ function Nav() {
           duration: 2,
         }
       );
+
+      gsap.fromTo(`mlogo`,{
+        scaleX:1.5,
+        left:100,
+      },{
+        scaleX:1,
+        left:0,
+      })
     }, 20);
 
     return () => {
@@ -88,7 +98,7 @@ function Nav() {
               src={"/logo.svg"}
               width={100}
               height={100}
-              className={styles.mLogo}
+              className={`mlogo ${styles.mLogo}`}
               alt={"Logo"}
             />
           </div>

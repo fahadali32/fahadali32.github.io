@@ -44,20 +44,37 @@ html,
 body {
   height: auto;
 }
+
 .panel {
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   position: sticky;
   top: 0;
 }
+.panel:nth-child(1) {
+  /* background-color: blue; */
+  height: calc(var(--vh, 1vh) * 107);
+}
 .panel:nth-child(2) {
   /* background-color: blue; */
-  height: 190vh;
+  height: var(--myP);
 }
-@media screen and (max-width: 695px) {
+.panel:nth-child(4){
+  height: auto;
+}
+@media screen and (max-width:320px) {
+  .panel:nth-child(2){
+    height: 130vh;
+    height: calc(var(--vh, 1vh) * 550);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+}
+@media (max-width: 695px) and (min-width: 321px){
   .panel:nth-child(2) {
     height: 130vh;
-    height: calc(var(--vh, 1vh) * 350);
+    height: calc(var(--vh, 1vh) * 400);
     position: sticky;
     top: 0;
   }
@@ -65,7 +82,7 @@ body {
 @media (min-width: 696px) and (max-width: 1019px) {
   .panel:nth-child(2) {
     height: 130vh;
-    height: calc(var(--vh, 1vh) * 270);
+    height: calc(var(--vh, 1vh) * 250);
     position: sticky;
     top: 0;
   }

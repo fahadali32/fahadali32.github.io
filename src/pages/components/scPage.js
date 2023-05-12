@@ -17,6 +17,7 @@ function Scpage() {
   const [size, setSize] = useState();
 
   useEffect(() => {
+    
     let mm = gsap.matchMedia();
     mm.add("(max-width: 500px)", () => {
       setSize(1);
@@ -192,7 +193,7 @@ function Scpage() {
         ease: "Power.inOut",
         toggleActions: "play none none reverse",
         scrub: 1,
-        markers: true,
+        // markers: true,
         pin: true,
         animation: tl,
         endTrigger: element,
@@ -208,7 +209,7 @@ function Scpage() {
   }, []);
 
   return (
-    <div ref={ref} className={styles.secbox}>
+    <div ref={ref} className={`secbox ${styles.secbox}`}>
       <div className={styles.mainBx}>
         <div className={styles.questionBox}>
           <svg

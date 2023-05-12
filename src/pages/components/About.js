@@ -94,6 +94,8 @@ function About() {
           console.log("no");
         }
       });
+    },{
+      threshold:0.5
     });
 
     observer.observe(aboutRef.current);

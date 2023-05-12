@@ -110,34 +110,31 @@
   color: white;
   margin-top: 50px;
 }
-
-@media(hover: hover) and (pointer: fine) {
-  .skillShow {
-    max-width: 300px;
-    min-height: 250px;
-    background: #06031d;
-    padding: 30px;
-    border-radius: 3px;
-    box-sizing: border-box;
-    color: #fff;
-    overflow-wrap: anywhere;
-    margin: 20px;
-    font-family: sans-serif;
-    box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px,
-      rgb(0 0 0 / 30%) 0px 18px 36px -18px;
-    text-align: inherit;
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    transition: box-shadow 0.2s ease;
-    
-  }
+.skillShow {
+  max-width: 300px;
+  min-height: 250px;
+  background: #06031d;
+  padding: 30px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #fff;
+  overflow-wrap: anywhere;
+  margin: 20px;
+  font-family: sans-serif;
+  box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px,
+    rgb(0 0 0 / 30%) 0px 18px 36px -18px;
+  text-align: inherit;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  transition: box-shadow 0.2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
   .skillShow:hover {
     box-shadow: #cbe1f69c 7px 9px 0px 0px, rgb(12 6 53) 0px 18px 36px -18px;
-    
   }
 }
 .mainBx {
@@ -165,7 +162,7 @@
     top: 30vw;
   }
 }
-.icons{
+.icons {
   display: flex;
   align-items: center;
   justify-content: center;

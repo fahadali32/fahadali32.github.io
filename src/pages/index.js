@@ -11,17 +11,34 @@ import Nav from "./components/nav";
 import Poster from "./components/poster";
 import Scpage from "./components/scPage";
 import About from "./components/About";
+import Project from "./components/Project";
+
+import useSWR from 'swr'
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isScrolling, setIsScrolling] = useState(false);
   const posterBox = useRef();
-
+  const panel2 = useRef();
+  const [data, setData ] = useState()
   useEffect(() => {
+
+    async function fetchData(){
+      const data = await fetch("/api/project")
+      const result = await data.json()
+      setData(result)
+    }
+    fetchData()
+
     let vh = window.innerHeight * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
+    window.addEventListener("reasize", (e) => {
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    });
     document.documentElement.style.setProperty("--vh", `${vh}px`);
+
     // Register ScrollTrigger and ScrollToPlugin with gsap
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -61,8 +78,8 @@ export default function Home() {
     // gsap.utils.toArray(".panel").forEach((panel, i) => {
     //   ScrollTrigger.create({
     //     trigger: panel,
-        // start: "top bottom-=2",
-        // end: () => "+=" + (window.innerHeight * 2 - 4),
+    // start: "top bottom-=2",
+    // end: () => "+=" + (window.innerHeight * 2 - 4),
     //     onToggle: (self) => self.isActive && !scrollTween && goToSection(i),
     //   });
     // });
@@ -76,6 +93,7 @@ export default function Home() {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 4100);
+    // console.log(props);
 
     return () => clearTimeout(timer);
   }, [isLoading]);
@@ -97,22 +115,23 @@ export default function Home() {
         <div className={styles.mainbd}>
           <div className={styles.main}>
             <section className="panel">
-              {/* <Nav /> */}
-              <div className={`${styles.posterbox}`} ref={posterBox}>
-                <Nav />
+              <Nav />
+              <div className={` ${styles.posterbox}`} ref={posterBox}>
                 <div className={styles.poster}>
                   <Poster />
                 </div>
               </div>
             </section>
 
-            <section className="panel">
+            <section className="panel panel2">
               <Scpage />
             </section>
             <section className="panel">
               <About />
             </section>
-            <section className="panel">THREE</section>
+            <section className="panel">
+              <Project data={data}/>
+            </section>
             <section className="panel">FOUR</section>
           </div>
         </div>
@@ -120,3 +139,25 @@ export default function Home() {
     </>
   );
 }
+
+// export async function getStaticProps({ req, res }) {
+//   console.log(req.headers.referer);
+//   try {
+//     const data = await fetch(`${req.headers.referer}api/project`)
+//     const final = await data.json()
+//     console.log(final);
+//     return {
+//       props: {
+//         data: "",
+//       },
+//     };
+    
+//   } catch (error) {
+//     console.log(error);
+//     return {
+//       props: {
+//         data: "",
+//       },
+//     };
+//   }
+// }
