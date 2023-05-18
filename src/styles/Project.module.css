@@ -1,158 +1,253 @@
-.proImg {
-  height: 18%;
-  width: 100%;
-  object-fit: contain;
-  inset: 0px;
-  color: transparent;
-  filter: grayscale(1);
-  mix-blend-mode: screen;
-  box-shadow: 20px 14px 0px 0px #7697b6;
-  border: 1px solid bisque;
-  transition: all 0.5s;
-}
-.ProjectImg,
-.proDes {
-  grid-row: 1/2;
-}
-
-
-.Project:nth-child(odd) {
-  display: grid;
-  align-items: center;
-  justify-items: end;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: center;
-  width: 50%;
-}
-.Project:nth-child(odd) > .ProjectImg {
-  width: clamp(17.375rem, 11.2566rem + 32.6316vw, 40.625rem);
-  grid-column: 1/3;
-}
-.Project:nth-child(odd) > .proDes {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  align-content: center;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  width: 384px;
-  height: 210px;
-  /* padding: 30px; */
-  gap: 30px;
-  grid-column: 2/-1;
-}
-
-.Project:nth-child(even) {
-  display: grid;
-  align-items: center;
-  justify-items: end;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: center;
-  width: 50%;
-}
-.Project:nth-child(even) >.ProjectImg{
-  width: clamp(17.375rem, 11.2566rem + 32.6316vw, 40.625rem);
-  grid-column: 2/-1
-}
-.Project:nth-child(even) >.proDes {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: center;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  width: 384px;
-  height: 210px;
-  /* padding: 30px; */
-  gap: 30px;
-  grid-column: 1/3;
-}
-.Project:nth-child(even) >.proDes > .proDiv > .proP {
-  text-align: start;
-}
-
-
-.projectTitle {
-  color: white;
-  font-family: sans-serif;
-  font-size: clamp(2.1875rem, 1.8rem + 1.8421vw, 3.5rem);
-  grid-column: 6/12;
-}
-.proBox {
-  padding: 1%;
-  height: 100%;
-}
-.proSec {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  gap: 80px;
-  grid-template-rows: repeat(3,1fr);
-  height: 100vh;
-  align-items: center;
-  justify-items: start;
-}
-.proH {
-  color: white;
-  font-family: sans-serif;
-  font-size: larger;
-}
-.proDiv {
-  background: #06031d;
-  padding: 50px;
-  position: relative;
-}
-.proP {
-  color: white;
-  font-family: sans-serif;
-  overflow-wrap: anywhere;
-  text-align: end;
-}
-.proImg:hover{
-  mix-blend-mode: normal;
-  filter: unset;
-  border: 0px;
-  box-shadow: 1px 0px 0px 0px #7697b6;
-  border: 1px solid #7697b6;
-}
-.proBoxSec{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-  grid-column: 6/7;
-}
-@media screen and (max-width: 740px) {
-  .Project {
-    grid-template-columns: repeat(2, 1fr);
+@media screen and (min-width: 740px) {
+  .proImg {
+    height: 18%;
+    width: 100%;
+    object-fit: contain;
+    inset: 0px;
+    color: transparent;
+    filter: grayscale(1);
+    mix-blend-mode: screen;
+    box-shadow: 20px 14px 0px 0px #7697b6;
+    border: 1px solid bisque;
+    transition: all 0.5s;
   }
-  .ProjectImg,.proDes{
-    grid-row: auto;
+  .ProjectImg,
+  .proDes {
+    grid-row: 1/2;
   }
-  .ProjectImg{
-    grid-column: 2/3;
-  }
-  .proDes{
-    width: auto;
-    height: auto;
-    padding: 30px;
-    background: #06031d;
 
+  .Project:nth-child(odd) {
+    display: grid;
+    align-items: center;
+    justify-items: end;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    width: 50%;
+  }
+  .Project:nth-child(odd) > .ProjectImg {
+    width: clamp(17.375rem, 11.2566rem + 32.6316vw, 40.625rem);
+    grid-column: 1/3;
+  }
+  .Project:nth-child(odd) > .proDes {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 384px;
+    height: 210px;
+    /* padding: 30px; */
+    gap: 30px;
+    grid-column: 2/-1;
+  }
+
+  .Project:nth-child(even) {
+    display: grid;
+    align-items: center;
+    justify-items: end;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    width: 50%;
+  }
+  .Project:nth-child(even) > .ProjectImg {
+    width: clamp(17.375rem, 11.2566rem + 32.6316vw, 40.625rem);
+    grid-column: 2/-1;
+  }
+  .Project:nth-child(even) > .proDes {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     align-content: center;
     flex-direction: column;
     flex-wrap: nowrap;
-    
+    width: 384px;
+    height: 210px;
+    /* padding: 30px; */
+    gap: 30px;
+    grid-column: 1/3;
   }
-  .proP{
-    text-align: unset;
+  .Project:nth-child(even) > .proDes > .proDiv > .proP {
+    text-align: start;
   }
-  .proDiv{
-    padding: 0px;
+
+  .projectTitle {
+    color: white;
+    font-family: sans-serif;
+    font-size: clamp(2.1875rem, 1.8rem + 1.8421vw, 3.5rem);
+    grid-column: 6/12;
+  }
+  .proBox {
+    padding: 1%;
+    height: 100%;
+  }
+  .proSec {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 80px;
+    grid-template-columns: repeat(3, 1fr);
+    /* height: 100vh; */
+    align-items: center;
+    justify-items: start;
+  }
+  .proH {
+    color: white;
+    font-family: sans-serif;
+    font-size: larger;
+  }
+  .proDiv {
+    background: #06031d;
+    padding: 50px;
+    position: relative;
+  }
+  .proP {
+    color: white;
+    font-family: sans-serif;
+    overflow-wrap: anywhere;
+    text-align: end;
+  }
+  .proImg:hover {
+    mix-blend-mode: normal;
+    filter: unset;
+    border: 0px;
+    box-shadow: 1px 0px 0px 0px #7697b6;
+    border: 1px solid #7697b6;
+  }
+  .proBoxSec {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    grid-column: 6/7;
   }
 }
+@media screen and (max-width: 740px) {
+  .proImg {
+    height: 18%;
+    width: 100%;
+    object-fit: contain;
+    inset: 0px;
+    color: transparent;
+    filter: grayscale(1);
+    mix-blend-mode: screen;
+    /* box-shadow: 20px 14px 0px 0px #7697b6; */
+    border: 1px solid bisque;
+    transition: all 0.5s;
+  }
+  .ProjectImg,
+  .proDes {
+    grid-row: 1/2;
+  }
 
+  .Project:nth-child(odd) {
+    display: grid;
+    align-items: center;
+    justify-items: end;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    width: 50%;
+  }
+  .Project:nth-child(odd) > .ProjectImg {
+    width:100%;
+    grid-column: 1/3;
+  }
+  .Project:nth-child(odd) > .proDes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 384px;
+    height: 210px;
+    /* padding: 30px; */
+    gap: 30px;
+    grid-row: 2/2;
+  }
+
+  .Project:nth-child(even) {
+    display: grid;
+    align-items: center;
+    justify-items: end;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    width: 50%;
+  }
+  .Project:nth-child(even) > .ProjectImg {
+    width: 100%;
+    grid-column: 1/3;
+  }
+  .Project:nth-child(even) > .proDes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 384px;
+    height: 210px;
+    /* padding: 30px; */
+    gap: 30px;
+    grid-row: 2/2;
+  }
+  .Project:nth-child(even) > .proDes > .proDiv > .proP {
+    text-align: start;
+  }
+
+  .projectTitle {
+    color: white;
+    font-family: sans-serif;
+    font-size: clamp(2.1875rem, 1.8rem + 1.8421vw, 3.5rem);
+    grid-column: 2/7;
+  }
+  .proBox {
+    padding: 1%;
+    height: 100%;
+    padding-top: 150px;
+  }
+  .proSec {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 80px;
+    grid-template-rows: repeat(3, 0.1fr);
+    /* height: 100vh; */
+    align-items: center;
+    justify-items: start;
+  }
+  .proH {
+    color: white;
+    font-family: sans-serif;
+    font-size: larger;
+  }
+  .proDiv {
+    background: #06031d;
+    padding: 50px;
+    position: relative;
+  }
+  .proP {
+    color: white;
+    font-family: sans-serif;
+    overflow-wrap: anywhere;
+    text-align: end;
+  }
+  .proImg:hover {
+    mix-blend-mode: normal;
+    filter: unset;
+    border: 0px;
+    /* box-shadow: 1px 0px 0px 0px #7697b6; */
+    border: 1px solid #7697b6;
+  }
+  .proBoxSec {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    grid-column: 1/7;
+  }
+}

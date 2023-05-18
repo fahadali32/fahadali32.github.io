@@ -7,61 +7,60 @@ import SplitType from "split-type";
 import useSWR from "swr";
 
 function Project(props) {
-  const projectRef = useRef();
+  const projectRef = useRef(); 
   const [project, setProject] = useState(props.data);
   useEffect(() => {
-    setProject(props.data);
-    const tl = gsap.timeline();
-    gsap.set(".project", {
-      opacity: 1,
+    const tl = gsap.timeline({
+      duration: 0.5,
     });
+    const splitTxt = document.querySelectorAll(".project");
 
-    tl.from(".proDes", {
-      x: -300,
-      opacity: 0,
-      scrub: 0.5,
-    }).from(".proImg", {
-      x: 100,
-      opacity: 0,
-      scrub: 0.5,
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((el) => {
-        if (el.isIntersecting) {
-          const splitTxt = document.querySelectorAll(".project");
-          splitTxt.forEach((element) => {
-            const text = new SplitType(element, { types: "words, chars" });
-            gsap.from(text.chars, {
-              duration: 0.8,
-              opacity: 1,
-              delay: 1,
-              scale: 0,
-              y: 80,
-              rotationX: 180,
-              transformOrigin: "0% 50% -50",
-              ease: "back",
-              stagger: 0.01,
-            });
-          });
-          tl.play();
-          console.log("project yes");
-        } else {
-          tl.reverse();
-          console.log("project no");
-        }
+    splitTxt.forEach((element) => {
+      const text = new SplitType(element, { types: "words, chars" });
+      tl.from(text.chars, {
+        duration: 0.1,
+        opacity: 1,
+        delay: 0,
+        scale: 0,
+        y: 80,
+        rotationX: 180,
+        transformOrigin: "0% 50% -50",
+        ease: "back",
+        stagger: 0.01,
       });
-    },{ threshold: 0.5 });
+    });
 
-    console.log(project);
+    // tl.from(".proDes", {
+    //   opacity: 0,
+    //   duration: 0.1,
+    // }).from(".proImg", {
+    //   stagger: 0.1,
+    //   opacity: 0,
+    // });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((el) => {
+          if (el.isIntersecting) {
+            tl.play();
+            console.log("project yes");
+          } else {
+            // tl.reverse();
+            console.log("project no");
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
     observer.observe(projectRef.current);
-
     return () => {};
-  }, [props, project]);
+  }, []);
 
   return (
     <div className={styles.proBox}>
-      <div className={styles.proSec} ref={projectRef}>
+      <div ref={projectRef} className={styles.proSec}>
         <h1 className={`project ${styles.projectTitle}`}>Project</h1>
         <div className={styles.proBoxSec}>
           {project != null

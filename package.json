@@ -25,6 +25,7 @@
     "react-gsap-enhancer": "^0.3.0",
     "react-icons": "^4.8.0",
     "react-parallax-tilt": "^1.7.129",
+    "react-scroll": "^1.8.9",
     "react-simple-typewriter": "^5.0.1",
     "sharp": "^0.32.1",
     "split-type": "^0.3.3",

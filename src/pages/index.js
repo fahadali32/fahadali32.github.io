@@ -12,8 +12,10 @@ import Poster from "./components/poster";
 import Scpage from "./components/scPage";
 import About from "./components/About";
 import Project from "./components/Project";
+import Contact from "./components/Contact";
+import { Link } from "react-scroll";
 
-import useSWR from 'swr'
+import useSWR from "swr";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,15 +24,14 @@ export default function Home() {
   const [isScrolling, setIsScrolling] = useState(false);
   const posterBox = useRef();
   const panel2 = useRef();
-  const [data, setData ] = useState()
+  const [data, setData] = useState();
   useEffect(() => {
-
-    async function fetchData(){
-      const data = await fetch("/api/project")
-      const result = await data.json()
-      setData(result)
+    async function fetchData() {
+      const data = await fetch("/api/project");
+      const result = await data.json();
+      setData(result);
     }
-    fetchData()
+    fetchData();
 
     let vh = window.innerHeight * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
@@ -98,6 +99,12 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, [isLoading]);
 
+  function moveTo() {
+    const data = document.querySelector(".contact");
+    console.log(data);
+    data.scrollIntoView({ behavior: "auto" });
+  }
+
   return (
     <>
       <Head>
@@ -118,7 +125,7 @@ export default function Home() {
               <Nav />
               <div className={` ${styles.posterbox}`} ref={posterBox}>
                 <div className={styles.poster}>
-                  <Poster />
+                  <Poster moveTo={moveTo} />
                 </div>
               </div>
             </section>
@@ -130,34 +137,16 @@ export default function Home() {
               <About />
             </section>
             <section className="panel">
-              <Project data={data}/>
+              <Project data={data} />
             </section>
-            <section className="panel">FOUR</section>
+            <section className="panel">
+              <div className="contact" id="contact" >
+                <Contact />
+              </div>
+            </section>
           </div>
         </div>
       )}
     </>
   );
 }
-
-// export async function getStaticProps({ req, res }) {
-//   console.log(req.headers.referer);
-//   try {
-//     const data = await fetch(`${req.headers.referer}api/project`)
-//     const final = await data.json()
-//     console.log(final);
-//     return {
-//       props: {
-//         data: "",
-//       },
-//     };
-    
-//   } catch (error) {
-//     console.log(error);
-//     return {
-//       props: {
-//         data: "",
-//       },
-//     };
-//   }
-// }

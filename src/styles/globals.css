@@ -44,7 +44,10 @@ html,
 body {
   height: auto;
 }
-
+::selection {
+  color:white;
+  background: #9590BB;
+}
 .panel {
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
@@ -59,19 +62,25 @@ body {
   /* background-color: blue; */
   height: var(--myP);
 }
-.panel:nth-child(4){
+.panel:nth-child(4) {
   height: auto;
 }
-@media screen and (max-width:320px) {
-  .panel:nth-child(2){
+@media screen and (max-width: 320px) {
+  .panel:nth-child(2) {
     height: 130vh;
     height: calc(var(--vh, 1vh) * 550);
     position: -webkit-sticky;
     position: sticky;
     top: 0;
   }
+  .panel:nth-child(3) {
+    height: 130vh;
+    height: calc(var(--vh, 1vh) * 150);
+    position: sticky;
+    top: 0;
+  }
 }
-@media (max-width: 695px) and (min-width: 321px){
+@media (max-width: 695px) and (min-width: 321px) {
   .panel:nth-child(2) {
     height: 130vh;
     height: calc(var(--vh, 1vh) * 400);

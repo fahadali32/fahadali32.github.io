@@ -1,0 +1,119 @@
+@media screen and (min-width: 740px) {
+  .conMain {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .contactBox {
+    background: #514a8d;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .form {
+    display: table-caption;
+    overflow: hidden;
+    width: clamp(22.1875rem, 15.7695rem + 13.7283vw, 28.125rem);
+  }
+  .form > form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form > form > input {
+    padding: 7px;
+    font-size: larger;
+    border-radius: 10px;
+  }
+  .form > form > textarea {
+    padding: 5px;
+    font-size: larger;
+    resize: none;
+    width: 263px;
+    border-radius: 10px;
+  }
+  .conText {
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .conSubmit {
+    width: 265px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+    background: #39316b;
+    border: none;
+  }
+}
+@media screen and (max-width: 740px) {
+  .conMain {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .contactBox {
+    /* background: #514a8d; */
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+  .form {
+    display: table-caption;
+    overflow: hidden;
+    width: clamp(22.1875rem, 15.7695rem + 13.7283vw, 28.125rem);
+  }
+  .form > form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form > form > input {
+    padding: 7px;
+    font-size: larger;
+    border-radius: 10px;
+  }
+  .form > form > textarea {
+    padding: 5px;
+    font-size: larger;
+    resize: none;
+    width: 263px;
+    border-radius: 10px;
+  }
+  .conText {
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .conSubmit{
+    width: 265px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+    background: #39316B;
+    border: none;
+  }
+}

@@ -61,7 +61,8 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    padding: 50px;
+    /* padding: 50px; */
+    padding-top: 200px;
   }
   .description {
     /* background-color: #06031d; */

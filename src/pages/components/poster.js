@@ -7,8 +7,9 @@ import SplitType from "split-type";
 import { gsap } from "gsap/dist/gsap.js";
 import Tilt from "react-parallax-tilt";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { Link } from "react-scroll";
 
-function Poster() {
+function Poster(props) {
   const root = useRef();
   const posterMain = useRef();
   const myElement = useRef(null);
@@ -52,8 +53,6 @@ function Poster() {
     };
   }, []);
 
- 
-
   return (
     <div ref={posterMain} className={`${styles.postermain}`}>
       <div
@@ -85,12 +84,7 @@ function Poster() {
           />
         </div>
         <div className={styles.conBtn}>
-          <button
-            className={styles.cBtn}
-            onClick={() => {
-              alert("hi");
-            }}
-          >
+          <button className={styles.cBtn} onClick={props.moveTo}>
             {"Lets's Talk"}
           </button>
         </div>
@@ -744,7 +738,6 @@ function Poster() {
             </linearGradient>
           </defs>
         </svg>
-        
       </div>
     </div>
   );
