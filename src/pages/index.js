@@ -92,7 +92,7 @@ export default function Home() {
     // }
     // Show loading screen for 7 seconds
     const timer = setTimeout(() => {
-      setIsLoading(true);
+      setIsLoading(false);
     }, 4100);
     // console.log(props);
 
