@@ -50,7 +50,7 @@ body {
 }
 .panel {
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  /* height: calc(var(--vh, 1vh) * 100); */
   position: sticky;
   top: 0;
 }
@@ -82,8 +82,8 @@ body {
 }
 @media (max-width: 695px) and (min-width: 321px) {
   .panel:nth-child(2) {
-    height: 130vh;
-    height: calc(var(--vh, 1vh) * 400);
+    /* height: 130vh; */
+    /* height: calc(var(--vh, 1vh) * 400); */
     position: sticky;
     top: 0;
   }

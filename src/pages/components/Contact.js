@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "@/styles/Contact.module.css";
 import gsap from "gsap";
-
+import axios from "axios";
 
 function Contact() {
   const contactRef = useRef();
@@ -51,15 +51,35 @@ function Contact() {
 
     observer.observe(contactRef.current);
     return () => {};
+
   }, []);
+
+  async function Submit(e) {
+    e.preventDefault()
+    const email = e.target.email.value
+    const name = e.target.name.value
+    const message = e.target.message.value
+    const send = await axios.post('/api/contact',{
+      email:email,
+      name:name,
+      message:message
+    })
+
+    if(send.messageId){
+      
+    }
+    // console.log(email,name,message);
+  }
 
   return (
     <div ref={contactRef} className={styles.conMain}>
       <div className={styles.contactBox}>
-        <div className={styles.form}>
+        <div className={`form ${styles.form}`}>
           <h1 className={styles.conText}>Contact with me</h1>
           <br />
-          <form>
+          <form onSubmit={(e)=>{
+            Submit(e)
+          }}>
             <input
               type="email"
               name="email"
@@ -81,7 +101,7 @@ function Contact() {
             <button className={styles.conSubmit}>Submit</button>
           </form>
         </div>
-        <div className={styles.imgBx}>
+        <div className={`imgbox ${styles.imgBx}`}>
           <svg
             viewBox="0 0 532 666"
             fill="none"

@@ -7,20 +7,21 @@ import SplitType from "split-type";
 import useSWR from "swr";
 
 function Project(props) {
-  const projectRef = useRef(); 
+  const projectRef = useRef();
   const [project, setProject] = useState(props.data);
   useEffect(() => {
     const tl = gsap.timeline({
-      duration: 0.5,
+      duration: 1,
     });
+
     const splitTxt = document.querySelectorAll(".project");
 
     splitTxt.forEach((element) => {
       const text = new SplitType(element, { types: "words, chars" });
       tl.from(text.chars, {
-        duration: 0.1,
+        duration: 0.5,
         opacity: 1,
-        delay: 0,
+        delay: -1,
         scale: 0,
         y: 80,
         rotationX: 180,
@@ -29,33 +30,47 @@ function Project(props) {
         stagger: 0.01,
       });
     });
+    let ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: projectRef.current,
+        start: "top 70%",
+        end: "bottom 5%+=200",
+        ease: "Power.inOut",
+        toggleActions: "play none none reverse",
+        scrub: 1,
+        markers: true,
+        // pin: true,
+        animation: tl,
+        endTrigger: projectRef.current,
+        duration: function () {
+          return this.trigger.offsetHeight / 100;
+        },
+      });
 
-    // tl.from(".proDes", {
-    //   opacity: 0,
-    //   duration: 0.1,
-    // }).from(".proImg", {
-    //   stagger: 0.1,
-    //   opacity: 0,
-    // });
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((el) => {
-          if (el.isIntersecting) {
-            tl.play();
-            console.log("project yes");
-          } else {
-            // tl.reverse();
-            console.log("project no");
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-      }
-    );
+    })
 
-    observer.observe(projectRef.current);
-    return () => {};
+    // const observer = new IntersectionObserver(
+    //   (entries) => {
+    //     entries.forEach((el) => {
+    //       if (el.isIntersecting) {
+    //         tl.play();
+    //         console.log("yes project");
+    //       } else {
+    //         tl.reverse();
+    //         console.log("no project");
+    //       }
+    //     });
+    //   },
+    //   {
+    //     threshold: 0.5,
+    //   }
+    // );
+
+    // observer.observe(projectRef.current);
+
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
   return (

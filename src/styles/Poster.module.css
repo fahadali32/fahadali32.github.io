@@ -34,6 +34,9 @@
 .mtitle {
   color: white;
   font-size: clamp(2.8rem, calc(3.45rem + 5.77vw), 10.82rem);
+  font-family: sans-serif;
+  font-weight: 1000;
+  font-style: normal;
 }
 .types {
   color: white;
@@ -148,22 +151,21 @@
     top: 10vw;
     align-content: center;
   }
-  
 }
-@media screen and (min-width:600px) {
-  .postSection{
+@media screen and (min-width: 600px) {
+  .postSection {
     margin-top: -96px;
   }
 }
 @media screen and (max-width: 320px) {
-  .postermain{
+  .postermain {
     height: 97vh;
   }
-  .mtitle{
+  .mtitle {
     color: white;
     font-size: clamp(2.8rem, calc(2.8rem + 5.77vw), 10.82rem);
   }
-  .cBtn{
+  .cBtn {
     color: white;
     background: transparent;
     border: 1px solid white;

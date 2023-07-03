@@ -92,7 +92,7 @@ export default function Home() {
     // }
     // Show loading screen for 7 seconds
     const timer = setTimeout(() => {
-      setIsLoading(false);
+      setIsLoading(true);
     }, 4100);
     // console.log(props);
 
@@ -133,9 +133,11 @@ export default function Home() {
             <section className="panel panel2">
               <Scpage />
             </section>
+            <br/><br/><br/>
             <section className="panel">
               <About />
             </section>
+            
             <section className="panel">
               <Project data={data} />
             </section>

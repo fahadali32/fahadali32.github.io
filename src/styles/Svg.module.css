@@ -37,32 +37,42 @@
   }
 }
 
-@keyframes logo {
-  from {
-    transform: scale(1.5);
-    position: relative;
-    left: 0%;
-    top: 0;
-  }
-  to {
-    transform: scale(0.2);
-    position: relative;
-    left: -45%;
-    top: -23vw;
-  }
-}
+
 @media screen and (min-width: 768px) {
   .logo {
     transition: all 1s;
     top: -4vmin;
     left: -44.5vw;
   }
-  
+  @keyframes logo {
+    from {
+      transform: scale(1.5);
+      position: relative;
+      left: 0%;
+      top: 0;
+    }
+    to {
+      transform: scale(0.2);
+      position: relative;
+      left: -45%;
+      top: -23vw;
+    }
+  }
 }
 @media screen and (max-width: 768px) {
   .logo {
     transition: all 1s;
     top: -4vmin;
-    left: -90.5vw;
+    /* left: -90.5vw; */
+    transform: scale(0.5);
+
+  }
+  @keyframes logo {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
   }
 }

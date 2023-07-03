@@ -113,7 +113,20 @@
     font-size: larger;
     font-weight: bold;
     color: white;
-    background: #39316B;
+    background: #39316b;
     border: none;
   }
+}
+.form > form > input,.form > form > textarea {
+  background-color: #e2dfff;
+  border: 1px solid;
+  color:  #39316b;
+}
+.form > form > input:autofill,.form > form > textarea:autofill {
+  background-color: #e2dfff;
+  border: 1px solid;
+}
+.form > form > input:-webkit-autofill,.form > form > textarea:-webkit-autofill {
+  background-color: #e2dfff;
+  border: 1px solid;
 }

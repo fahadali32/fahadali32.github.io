@@ -12,93 +12,93 @@ function About() {
   const aboutRef = useRef();
   useEffect(() => {
     const tl = gsap.timeline({
-      duration: 1,
+      duration: 0.8,
     });
     const splitTxt = document.querySelectorAll(".about");
     const socialIc = document.querySelectorAll(".social");
 
-    splitTxt.forEach((element) => {
-      const text = new SplitType(element, { types: "words, chars" });
-      tl.from(text.chars, {
-        duration: 0.8,
-        opacity: 1,
-        delay: 0,
-        scale: 0,
-        y: 80,
-        rotationX: 180,
-        transformOrigin: "0% 50% -50",
-        ease: "back",
-        stagger: 0.01,
-      });
-    });
+    // splitTxt.forEach((element) => {
+    //   const text = new SplitType(element, { types: "words, chars" });
+    //   tl.from(text.chars, {
+    //     duration: 0.8,
+    //     opacity: 1,
+    //     delay: 0,
+    //     scale: 0,
+    //     y: 80,
+    //     rotationX: 180,
+    //     transformOrigin: "0% 50% -50",
+    //     ease: "back",
+    //     stagger: 0.01,
+    //   });
+    // });
 
-    //     width: 100%;
-    // transform: scale(1.5);
-    // background-color: #5f569c;
-    // transform-origin: 45% 0%;
-    tl.fromTo(
-      ".des",
-      {
-        opacity: 0,
-        duration: 0.2,
-        delay: -1,
-      },
-      {
-        opacity: 1,
-      }
-    )
-      .fromTo(
-        ".social",
-        {
-          y: -55,
-          stagger: 0.1,
-          opacity: 0,
-        },
-        {
-          y: 1,
-          stagger: 0.1,
-          opacity: 1,
-        }
-      )
-      .from(".imageBox", {
-        delay: -1,
-        scale: 0,
-        duration: 0.2,
-        ease: "back",
-        transformOrigin: "center",
-      })
-      .fromTo(
-        ".me",
-        {
-          duration: 0.01,
-          scale: 1,
-        },
-        {
-          duration: 0.01,
-          scale: 1.5,
-          transformOrigin: "45% 0%",
-          onComplete: () => {
-            tl.to(".me", {
-              opacity: 1,
-            });
-          },
-        }
-      );
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((el) => {
-        if (el.isIntersecting) {
-          tl.play();
-          console.log("yes");
-        } else {
-          tl.reverse();
-          console.log("no");
-        }
-      });
-    },{
-      threshold:0.5
-    });
+    // //     width: 100%;
+    // // transform: scale(1.5);
+    // // background-color: #5f569c;
+    // // transform-origin: 45% 0%;
+    // tl.fromTo(
+    //   ".des",
+    //   {
+    //     opacity: 0,
+    //     duration: 0.2,
+    //     delay: -1,
+    //   },
+    //   {
+    //     opacity: 1,
+    //   }
+    // )
+    //   .fromTo(
+    //     ".social",
+    //     {
+    //       y: -55,
+    //       stagger: 0.1,
+    //       opacity: 0,
+    //     },
+    //     {
+    //       y: 1,
+    //       stagger: 0.1,
+    //       opacity: 1,
+    //     }
+    //   )
+    //   .from(".imageBox", {
+    //     delay: -1,
+    //     scale: 0,
+    //     duration: 0.2,
+    //     ease: "back",
+    //     transformOrigin: "center",
+    //   })
+    //   .fromTo(
+    //     ".me",
+    //     {
+    //       duration: 0.01,
+    //       scale: 1,
+    //     },
+    //     {
+    //       duration: 0.01,
+    //       scale: 1.5,
+    //       transformOrigin: "45% 0%",
+    //       onComplete: () => {
+    //         tl.to(".me", {
+    //           opacity: 1,
+    //         });
+    //       },
+    //     }
+    //   );
+    // const observer = new IntersectionObserver((entries) => {
+    //   entries.forEach((el) => {
+    //     if (el.isIntersecting) {
+    //       tl.play();
+    //       console.log("yes");
+    //     } else {
+    //       tl.reverse();
+    //       console.log("no");
+    //     }
+    //   });
+    // },{
+    //   threshold:0.5
+    // });
 
-    observer.observe(aboutRef.current);
+    // observer.observe(aboutRef.current);
     return () => {};
   }, []);
 
@@ -135,13 +135,13 @@ function About() {
         </div>
 
         <div className={`imageBox ${styles.imageBox}`}>
-          <Image
+          {/* <Image
             src={"/Myactual.png"}
             width={100}
             height={100}
             alt="Md.Fahad Ali"
             className={`myImg ${styles.myImg}`}
-          />
+          /> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
